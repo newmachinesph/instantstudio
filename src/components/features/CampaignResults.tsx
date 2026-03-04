@@ -144,7 +144,7 @@ const CampaignResults = () => {
                         Production Timeline — Under 2 Months
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative' }} className="timeline-row">
-                        <div style={{
+                        <div className="timeline-line" style={{
                             position: 'absolute',
                             top: '0.75rem',
                             left: '1rem',
@@ -240,7 +240,29 @@ const CampaignResults = () => {
             <style>{`
                 @media (max-width: 1024px) {
                     .results-grid { grid-template-columns: repeat(3, 1fr) !important; }
-                    .timeline-row { flex-wrap: wrap !important; gap: 1rem !important; }
+                }
+                @media (max-width: 768px) {
+                    .timeline-row {
+                        flex-direction: column !important;
+                        align-items: stretch !important;
+                        gap: 0 !important;
+                        padding-left: 1.5rem !important;
+                    }
+                    .timeline-row > div {
+                        flex-direction: row !important;
+                        gap: 1rem !important;
+                        flex: unset !important;
+                        padding: 0.75rem 0 !important;
+                    }
+                    .timeline-line {
+                        top: 0 !important;
+                        bottom: 0 !important;
+                        left: 2rem !important;
+                        right: unset !important;
+                        width: 2px !important;
+                        height: auto !important;
+                        background: linear-gradient(to bottom, var(--primary-teal), var(--accent-orange)) !important;
+                    }
                 }
                 @media (max-width: 640px) {
                     .results-grid { grid-template-columns: repeat(2, 1fr) !important; }

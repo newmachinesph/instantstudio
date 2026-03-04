@@ -281,11 +281,8 @@ export default function ContactPage() {
             </section>
 
             <style>{`
-                @media (max-width: 1024px) {
-                    .contact-grid { grid-template-columns: 1fr !important; }
-                }
                 @media (max-width: 640px) {
-                    .form-row { grid-template-columns: 1fr !important; }
+                    .contact-grid { grid-template-columns: 1fr !important; }
                 }
             `}</style>
         </main>

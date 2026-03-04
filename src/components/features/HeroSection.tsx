@@ -193,8 +193,13 @@ const HeroSection = () => {
             </div>
 
             <style>{`
+                @media (max-width: 768px) {
+                    .hero-section { padding-top: 6rem !important; padding-bottom: 3rem !important; }
+                    .hero-meta { gap: 0.625rem !important; }
+                }
                 @media (max-width: 640px) {
-                    .hero-section { min-height: 700px !important; padding-top: 4rem !important; padding-bottom: 2rem; }
+                    .hero-section { min-height: auto !important; padding-top: 5.5rem !important; padding-bottom: 2.5rem !important; }
+                    .hero-meta > div { width: 100%; justify-content: center; }
                 }
             `}</style>
         </section>

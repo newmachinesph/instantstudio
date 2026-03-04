@@ -111,7 +111,7 @@ export default function AboutPage() {
                             We take pride in a strong team environment
                         </motion.h2>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+                        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
                             {highlights.map((item, i) => (
                                 <motion.div
                                     key={item.title}
