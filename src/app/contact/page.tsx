@@ -11,7 +11,7 @@ const faqs = [
     },
     {
         q: 'Can I upload photos of anyone?',
-        a: "No. According to our terms and conditions, you may only use Instantstudio.app for photos of yourself or other adults who have given you permission to do it for them. Please be respectful and make sure you have the clear consent of anyone's images you upload. Our models are not designed for children, we do not recommend using it for children as the results are unpredictable. Any usage outside of these terms is a violation and may result in termination of your account.",
+        a: "No. According to our terms and conditions, you may only use Instantstudio.ai for photos of yourself or other adults who have given you permission to do it for them. Please be respectful and make sure you have the clear consent of anyone's images you upload. Our models are not designed for children, we do not recommend using it for children as the results are unpredictable. Any usage outside of these terms is a violation and may result in termination of your account.",
     },
     {
         q: 'Who owns the generated photos?',
