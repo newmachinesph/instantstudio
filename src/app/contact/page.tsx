@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Clock, Send, Users, Palette, Sparkles, ChevronDown } from 'lucide-react';
+import { Mail, MapPin, Users, Palette, Sparkles, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
 const faqs = [
@@ -11,7 +11,7 @@ const faqs = [
     },
     {
         q: 'Can I upload photos of anyone?',
-        a: "No. According to our terms and conditions, you may only use InstantStudio.app for photos of yourself or other adults who have given you permission to do it for them. Please be respectful and make sure you have the clear consent of anyone's images you upload. Our models are not designed for children, we do not recommend using it for children as the results are unpredictable. Any usage outside of these terms is a violation and may result in termination of your account.",
+        a: "No. According to our terms and conditions, you may only use Instantstudio.app for photos of yourself or other adults who have given you permission to do it for them. Please be respectful and make sure you have the clear consent of anyone's images you upload. Our models are not designed for children, we do not recommend using it for children as the results are unpredictable. Any usage outside of these terms is a violation and may result in termination of your account.",
     },
     {
         q: 'Who owns the generated photos?',
@@ -109,159 +109,136 @@ export default function ContactPage() {
                 }} />
             </section>
 
-            {/* Form + Info */}
+            {/* Contact Info */}
             <section style={{ padding: '4rem 0 6rem' }}>
                 <div className="page-container">
-                    <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'start' }}>
-
-                        {/* Contact Form */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            style={{
-                                padding: '2.5rem',
-                                borderRadius: '1.5rem',
-                                background: 'var(--bg-card)',
-                                border: '1px solid var(--glass-border)',
-                            }}
-                        >
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-                                Send us a message
-                            </h2>
-                            <p style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                                We'll get back to you as soon as possible.
-                            </p>
-
-                            <form style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                                <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
-                                    <div>
-                                        <label style={labelStyle}>Name</label>
-                                        <input type="text" placeholder="Your name" style={inputStyle} />
-                                    </div>
-                                    <div>
-                                        <label style={labelStyle}>Email</label>
-                                        <input type="email" placeholder="you@example.com" style={inputStyle} />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label style={labelStyle}>Subject</label>
-                                    <select style={inputStyle} defaultValue="">
-                                        <option value="" disabled>Select a topic</option>
-                                        <option value="general">General Inquiry</option>
-                                        <option value="partnership">Partnership</option>
-                                        <option value="feature">Feature Request</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label style={labelStyle}>Message</label>
-                                    <textarea
-                                        placeholder="Tell us how we can help..."
-                                        rows={5}
-                                        style={{ ...inputStyle, resize: 'vertical' }}
-                                    />
-                                </div>
-
-                                <button type="submit" className="btn-primary" style={{
-                                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                                    gap: '0.5rem', fontSize: '1rem', padding: '0.875rem 2rem', width: '100%',
+                    <div style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
+                        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
+                            {/* Email Card */}
+                            <motion.a
+                                href="mailto:connect@instantstudio.ai"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                style={{
+                                    padding: '2.5rem 2rem',
+                                    borderRadius: '1.5rem',
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid var(--glass-border)',
+                                    textAlign: 'center',
+                                    textDecoration: 'none',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    gap: '1rem',
+                                    transition: 'border-color 0.2s ease',
+                                }}
+                            >
+                                <div style={{
+                                    width: '3.5rem', height: '3.5rem', borderRadius: '1rem',
+                                    background: 'linear-gradient(135deg, var(--primary-teal), var(--accent-orange))',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
                                 }}>
-                                    Send Message
-                                    <Send style={{ width: '1rem', height: '1rem' }} />
-                                </button>
-                            </form>
-                        </motion.div>
+                                    <Mail style={{ width: '1.5rem', height: '1.5rem' }} />
+                                </div>
+                                <div>
+                                    <p style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-muted)', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                                        EMAIL US
+                                    </p>
+                                    <p style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--primary-teal)' }}>
+                                        connect@instantstudio.ai
+                                    </p>
+                                </div>
+                            </motion.a>
 
-                        {/* Info Column */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
-                        >
-                            {/* Community Card */}
-                            <div style={{
-                                padding: '2rem',
-                                borderRadius: '1.5rem',
-                                background: 'var(--bg-card)',
-                                border: '1px solid var(--glass-border)',
-                            }}>
+                            {/* Location Card */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.08 }}
+                                viewport={{ once: true }}
+                                style={{
+                                    padding: '2.5rem 2rem',
+                                    borderRadius: '1.5rem',
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid var(--glass-border)',
+                                    textAlign: 'center',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    gap: '1rem',
+                                }}
+                            >
+                                <div style={{
+                                    width: '3.5rem', height: '3.5rem', borderRadius: '1rem',
+                                    background: 'linear-gradient(135deg, var(--primary-teal), var(--accent-orange))',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
+                                }}>
+                                    <MapPin style={{ width: '1.5rem', height: '1.5rem' }} />
+                                </div>
+                                <div>
+                                    <p style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-muted)', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                                        LOCATION
+                                    </p>
+                                    <p style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                                        Singapore
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* We Can Help With + Community */}
+                        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.12 }}
+                                viewport={{ once: true }}
+                                style={{
+                                    padding: '2rem',
+                                    borderRadius: '1.5rem',
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid var(--glass-border)',
+                                }}
+                            >
+                                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1rem' }}>
+                                    We Can Help With
+                                </h3>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                    {[
+                                        { icon: Sparkles, text: 'AI-powered campaign solutions' },
+                                        { icon: Users, text: 'Strategic partnerships & collaborations' },
+                                        { icon: Palette, text: 'Custom creative projects' },
+                                    ].map((item, i) => (
+                                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                            <item.icon style={{ width: '1.125rem', height: '1.125rem', color: 'var(--accent-orange)', flexShrink: 0 }} />
+                                            <span style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)' }}>{item.text}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.16 }}
+                                viewport={{ once: true }}
+                                style={{
+                                    padding: '2rem',
+                                    borderRadius: '1.5rem',
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid var(--glass-border)',
+                                }}
+                            >
                                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem' }}>
                                     Join Our Community
                                 </h3>
                                 <p style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                                    Join our growing community of innovators and collaborators! We're also inviting
-                                    strategic partners, agencies, and artists to connect with us. Share your best
-                                    creations, and you might get featured in our gallery to inspire others. Let's
-                                    work together to shape the future of design and creativity!
+                                    Join our growing community of innovators and collaborators! We&apos;re also inviting
+                                    strategic partners, agencies, and artists to connect with us.
                                 </p>
-                            </div>
-
-                            {/* Contact Details */}
-                            <div style={{
-                                padding: '2rem',
-                                borderRadius: '1.5rem',
-                                background: 'var(--bg-card)',
-                                border: '1px solid var(--glass-border)',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '1.25rem',
-                            }}>
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-                                    Contact Info
-                                </h3>
-                                {[
-                                    { icon: Mail, label: 'hello@instantstudio.ai', href: 'mailto:hello@instantstudio.ai' },
-                                    { icon: MapPin, label: 'Singapore', href: null },
-                                    { icon: Clock, label: 'Mon — Fri, 9am — 6pm SGT', href: null },
-                                ].map((item, i) => (
-                                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                        <div style={{
-                                            width: '2.5rem', height: '2.5rem', borderRadius: '0.75rem',
-                                            background: 'rgba(14, 76, 73, 0.1)',
-                                            display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                                        }}>
-                                            <item.icon style={{ width: '1.125rem', height: '1.125rem', color: 'var(--primary-teal)' }} />
-                                        </div>
-                                        {item.href ? (
-                                            <a href={item.href} style={{ fontSize: '0.9375rem', color: 'var(--primary-teal)', fontWeight: 600, textDecoration: 'none' }}>
-                                                {item.label}
-                                            </a>
-                                        ) : (
-                                            <span style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)' }}>{item.label}</span>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Why Reach Out */}
-                            <div style={{
-                                padding: '2rem',
-                                borderRadius: '1.5rem',
-                                background: 'var(--bg-card)',
-                                border: '1px solid var(--glass-border)',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '1rem',
-                            }}>
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.25rem' }}>
-                                    We Can Help With
-                                </h3>
-                                {[
-                                    { icon: Sparkles, text: 'AI-powered campaign solutions' },
-                                    { icon: Users, text: 'Strategic partnerships & collaborations' },
-                                    { icon: Palette, text: 'Custom creative projects' },
-                                ].map((item, i) => (
-                                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                        <item.icon style={{ width: '1.125rem', height: '1.125rem', color: 'var(--accent-orange)', flexShrink: 0 }} />
-                                        <span style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)' }}>{item.text}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -374,24 +351,3 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
     );
 }
 
-const labelStyle: React.CSSProperties = {
-    display: 'block',
-    fontSize: '0.8125rem',
-    fontWeight: 600,
-    color: 'var(--text-secondary)',
-    marginBottom: '0.5rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.05em',
-};
-
-const inputStyle: React.CSSProperties = {
-    width: '100%',
-    padding: '0.75rem 1rem',
-    borderRadius: '0.75rem',
-    border: '1px solid var(--glass-border)',
-    background: 'var(--bg-darker)',
-    color: 'var(--text-primary)',
-    fontSize: '0.9375rem',
-    outline: 'none',
-    transition: 'border-color 0.2s ease',
-};

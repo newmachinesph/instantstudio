@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+const TOOLKIT_URL = 'https://toolkit.instantstudio.ai/';
 import {
-    Sparkles, Gamepad2, Palette, CalendarHeart, Users, Building2,
+    Sparkles, Gamepad2, Palette, CalendarHeart, Users,
     Cpu, Handshake, BrainCircuit, Layout, PenTool, Blocks, ArrowRight,
     CheckCircle2, ImagePlus,
 } from 'lucide-react';
@@ -153,9 +153,9 @@ export default function ToolkitPage() {
                     </motion.p>
 
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-                        <Link href="/contact" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <a href={TOOLKIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                             Get Started <ArrowRight style={{ width: '1rem', height: '1rem' }} />
-                        </Link>
+                        </a>
                     </motion.div>
                 </div>
 
@@ -601,9 +601,9 @@ export default function ToolkitPage() {
                             Experience the future of business with Gen AI. Partner with us to explore endless possibilities and reach new heights.
                         </motion.p>
                         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                            <Link href="/contact" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <a href={TOOLKIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                                 Request a demo today <ArrowRight style={{ width: '1rem', height: '1rem' }} />
-                            </Link>
+                            </a>
                         </motion.div>
                     </div>
                 </div>
@@ -770,9 +770,9 @@ export default function ToolkitPage() {
 
                     <div style={{ textAlign: 'center' }}>
                         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                            <Link href="/contact" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <a href={TOOLKIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                                 Request a Quote <ArrowRight style={{ width: '1rem', height: '1rem' }} />
-                            </Link>
+                            </a>
                         </motion.div>
                     </div>
                 </div>

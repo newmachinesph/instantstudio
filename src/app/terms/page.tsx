@@ -9,27 +9,27 @@ const sections = [
     },
     {
         title: 'Compliance with Law',
-        text: 'You must use InstantStudio.app in a lawful manner and ensure that your conduct and any content you generate comply with all applicable local, national, and international laws.',
+        text: 'You must use Instantstudio.app in a lawful manner and ensure that your conduct and any content you generate comply with all applicable local, national, and international laws.',
     },
     {
         title: 'Intellectual Property of the Platform',
-        text: 'All content and software associated with InstantStudio.app, except for user-uploaded images and AI-generated content as per user rights, are the exclusive property of InstantStudio.app.',
+        text: 'All content and software associated with Instantstudio.app, except for user-uploaded images and AI-generated content as per user rights, are the exclusive property of Instantstudio.app.',
     },
     {
         title: 'Representation and Permissions',
-        text: 'You affirm that you own or have the necessary licenses, rights, consents, and permissions to upload images to InstantStudio.app and allow us to use them to generate AI content. You further represent that all images uploaded are of individuals who are of legal adult age, and they are either photos of yourself or of someone who has given you express permission to use their likeness.',
+        text: 'You affirm that you own or have the necessary licenses, rights, consents, and permissions to upload images to Instantstudio.app and allow us to use them to generate AI content. You further represent that all images uploaded are of individuals who are of legal adult age, and they are either photos of yourself or of someone who has given you express permission to use their likeness.',
     },
     {
         title: 'Usage of AI-Generated Images for Commercial Purposes',
-        text: 'The AI-generated images obtained from InstantStudio.app are authorized for both personal and commercial use. This includes the use of such images in advertising, marketing, product design, and other commercial activities. However, all commercial uses must adhere to applicable laws and regulations, particularly concerning copyright, privacy, and defamation.',
+        text: 'The AI-generated images obtained from Instantstudio.app are authorized for both personal and commercial use. This includes the use of such images in advertising, marketing, product design, and other commercial activities. However, all commercial uses must adhere to applicable laws and regulations, particularly concerning copyright, privacy, and defamation.',
     },
     {
         title: 'Prohibition of Resale and Service Arbitrage',
-        text: "You are expressly prohibited from reselling, repackaging, or incorporating InstantStudio.app's services, including the AI image generation feature, into any arbitrage or service-based business model. This restriction applies to all aspects of the service offered by InstantStudio.app, and violation of this clause may result in immediate termination of your access to our services and potential legal action.",
+        text: "You are expressly prohibited from reselling, repackaging, or incorporating Instantstudio.app's services, including the AI image generation feature, into any arbitrage or service-based business model. This restriction applies to all aspects of the service offered by Instantstudio.app, and violation of this clause may result in immediate termination of your access to our services and potential legal action.",
     },
     {
         title: 'Right of Service Refusal',
-        text: 'InstantStudio.app may deny service or terminate your access if you violate these terms or engage in any activity that violates the rights of any person or entity.',
+        text: 'Instantstudio.app may deny service or terminate your access if you violate these terms or engage in any activity that violates the rights of any person or entity.',
     },
     {
         title: 'Data Handling/Privacy',
@@ -37,15 +37,15 @@ const sections = [
     },
     {
         title: 'Acknowledgement of AI Inherent Qualities',
-        text: 'We do not guarantee the quality or specific characteristics of any AI-generated images. You recognize and accept that generative AI, including the technology used by InstantStudio.app to create images, may possess inherent biases due to its design, training, and the data it was trained on. InstantStudio.app is not responsible for any such biases or for the perception or interpretation of such biases within the generated content.',
+        text: 'We do not guarantee the quality or specific characteristics of any AI-generated images. You recognize and accept that generative AI, including the technology used by Instantstudio.app to create images, may possess inherent biases due to its design, training, and the data it was trained on. Instantstudio.app is not responsible for any such biases or for the perception or interpretation of such biases within the generated content.',
     },
     {
         title: 'Indemnification',
-        text: 'You agree to indemnify and hold harmless InstantStudio.app and its affiliates from any claim or demand made by any third party due to your use of the service, your violation of these terms, or your violation of any rights of another.',
+        text: 'You agree to indemnify and hold harmless Instantstudio.app and its affiliates from any claim or demand made by any third party due to your use of the service, your violation of these terms, or your violation of any rights of another.',
     },
     {
         title: 'Sales Policy',
-        text: 'All sales on InstantStudio.app are final. Given the digital nature of our service, we cannot offer refunds or exchanges.',
+        text: 'All sales on Instantstudio.app are final. Given the digital nature of our service, we cannot offer refunds or exchanges.',
     },
     {
         title: 'Amendments',
@@ -53,7 +53,7 @@ const sections = [
     },
     {
         title: 'Account Termination',
-        text: 'We reserve the right to terminate your account and restrict access to InstantStudio.app for violations of these terms.',
+        text: 'We reserve the right to terminate your account and restrict access to Instantstudio.app for violations of these terms.',
     },
 ];
 
@@ -83,7 +83,7 @@ export default function TermsPage() {
                             transition={{ delay: 0.1 }}
                             style={{ fontSize: '1.0625rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '0.5rem' }}
                         >
-                            By accessing and using InstantStudio.app, you acknowledge and agree to be bound by the following InstantStudio terms and conditions. Your use of the site constitutes acceptance of these terms.
+                            By accessing and using Instantstudio.app, you acknowledge and agree to be bound by the following InstantStudio terms and conditions. Your use of the site constitutes acceptance of these terms.
                         </motion.p>
                         <motion.p
                             initial={{ opacity: 0 }}

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const sections = [
     {
         title: 'Use of Images',
-        text: 'InstantStudio.app exclusively utilizes the images you upload to create personalized AI-generated headshots. These images are not employed for any purposes other than the generation of your headshots.',
+        text: 'Instantstudio.app exclusively utilizes the images you upload to create personalized AI-generated headshots. These images are not employed for any purposes other than the generation of your headshots.',
     },
     {
         title: 'Data Processing and Third-Party Disclosure',
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
                             lineHeight: 1.8,
                         }}
                     >
-                        At InstantStudio.app, we respect your privacy and are dedicated to protecting it. Our policy is designed to be transparent, ensuring you are fully aware of how your data is used, stored, and protected. By using our services, you agree to the terms outlined in this policy. We encourage you to read this document thoroughly to understand our practices regarding your personal information and how we will treat it.
+                        At Instantstudio.app, we respect your privacy and are dedicated to protecting it. Our policy is designed to be transparent, ensuring you are fully aware of how your data is used, stored, and protected. By using our services, you agree to the terms outlined in this policy. We encourage you to read this document thoroughly to understand our practices regarding your personal information and how we will treat it.
                     </motion.p>
                 </div>
             </section>

@@ -121,7 +121,7 @@ const HeroSection = () => {
                         lineHeight: 1.7,
                     }}
                 >
-                    An AI-powered platform enabling{' '}
+                    We built an AI-powered platform enabling{' '}
                     <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>27,547 Sun Life agents</span>{' '}
                     across Southeast Asia to instantly create personalized New Year greeting videos
                     with their regional celebrity ambassadors.

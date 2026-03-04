@@ -114,8 +114,8 @@ export default function Footer() {
                         &copy; {new Date().getFullYear()} InstantStudio. All rights reserved.
                     </p>
                     <div className={styles.contact}>
-                        <a href="mailto:hello@instantstudio.ai" className={styles.email}>
-                            hello@instantstudio.ai
+                        <a href="mailto:connect@instantstudio.ai" className={styles.email}>
+                            connect@instantstudio.ai
                         </a>
                     </div>
                 </div>
