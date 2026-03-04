@@ -1,65 +1,95 @@
-import Image from "next/image";
+'use client';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
+import HeroSection from '@/components/features/HeroSection';
+import CampaignResults from '@/components/features/CampaignResults';
+import ProcessSection from '@/components/features/ProcessSection';
+import VideoShowcase from '@/components/features/VideoShowcase';
+import PhilosophySection from '@/components/features/PhilosophySection';
+import Link from 'next/link';
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main style={{ minHeight: '100vh', background: 'var(--bg-dark)', color: 'var(--text-primary)' }}>
+
+      {/* Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-teal)] to-[var(--accent-orange)] origin-left z-50"
+        style={{ scaleX }}
+      />
+
+      {/* Section 1: Campaign Hero */}
+      <HeroSection />
+
+      {/* 3D eCard Video Showcase */}
+      <VideoShowcase />
+
+      {/* Section 2: Campaign Results */}
+      <CampaignResults />
+
+      {/* Section 3: How AI Brings This to Life — 5-Step Process */}
+      <ProcessSection />
+
+      {/* Section 4: Responsible AI */}
+      <PhilosophySection />
+
+      {/* Section 5: Final CTA */}
+      <section className="cta-section" style={{ position: 'relative', overflow: 'hidden', background: 'var(--bg-darker)' }}>
+        <div style={{ maxWidth: 'var(--container-max)', marginLeft: 'auto', marginRight: 'auto', paddingLeft: 'clamp(1rem, 4vw, 2rem)', paddingRight: 'clamp(1rem, 4vw, 2rem)', position: 'relative', zIndex: 10 }}>
+          <div style={{ maxWidth: '64rem', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 700, marginBottom: '1.5rem', letterSpacing: '-0.03em', lineHeight: 1.1 }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Ready to Create Your Own{' '}
+              <span style={{ color: 'var(--accent-orange)' }}>AI-Powered Campaign?</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              style={{ fontSize: 'clamp(1.125rem, 2vw, 1.5rem)', color: 'var(--text-secondary)', maxWidth: '40rem', marginLeft: 'auto', marginRight: 'auto', marginBottom: '3rem', lineHeight: 1.6 }}
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              From celebrity collaborations to personalized agent experiences,
+              Instant Studio brings AI innovation to life for global brands.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              viewport={{ once: true }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}
+            >
+              <Link href="/contact" className="btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2.5rem' }}>
+                Start Your Campaign
+              </Link>
+              <Link href="/contact" className="btn-secondary" style={{ fontSize: '1.125rem', padding: '1rem 2.5rem' }}>
+                Contact Us
+              </Link>
+            </motion.div>
+
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 'min(800px, 100vw)', height: 'min(800px, 100vw)', background: 'linear-gradient(to right, var(--primary-teal), var(--accent-orange))', borderRadius: '50%', filter: 'blur(150px)', opacity: 0.06, pointerEvents: 'none' }} />
+      </section>
+
+      <style>{`
+        .cta-section { padding: 8rem 0; }
+        @media (max-width: 1024px) {
+          .cta-section { padding: 5rem 0; }
+        }
+        @media (max-width: 640px) {
+          .cta-section { padding: 3rem 0; }
+        }
+      `}</style>
+    </main>
   );
 }
