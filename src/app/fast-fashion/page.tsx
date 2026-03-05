@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     ArrowRight, Shirt, Camera, Users, Zap,
     CheckCircle2, Palette, Video, ImagePlus,
@@ -198,13 +199,8 @@ export default function FastFashionPage() {
                                         <Shirt style={{ width: '1.25rem', height: '1.25rem' }} />
                                     </div>
                                     <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.75rem' }}>From this real shirt</p>
-                                    <div style={{
-                                        height: '10rem', borderRadius: '1rem',
-                                        background: 'linear-gradient(135deg, rgba(14,76,73,0.12), rgba(244,120,77,0.08))',
-                                        border: '1px dashed var(--glass-border)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    }}>
-                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <div style={{ height: '10rem', borderRadius: '1rem', overflow: 'hidden', position: 'relative' }}>
+                                        <Image src="https://placehold.co/400x280/1a1a2e/00d4aa?text=Real+Shirt" alt="Real shirt" fill style={{ objectFit: 'cover' }} unoptimized />
                                     </div>
                                 </div>
                                 <div style={{
@@ -223,13 +219,8 @@ export default function FastFashionPage() {
                                         <Camera style={{ width: '1.25rem', height: '1.25rem' }} />
                                     </div>
                                     <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.75rem' }}>To this AI photoshoot</p>
-                                    <div style={{
-                                        height: '10rem', borderRadius: '1rem',
-                                        background: 'linear-gradient(135deg, rgba(244,120,77,0.08), rgba(14,76,73,0.12))',
-                                        border: '1px dashed var(--glass-border)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    }}>
-                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <div style={{ height: '10rem', borderRadius: '1rem', overflow: 'hidden', position: 'relative' }}>
+                                        <Image src="https://placehold.co/400x280/1a1a2e/ff6b35?text=AI+Photoshoot" alt="AI photoshoot" fill style={{ objectFit: 'cover' }} unoptimized />
                                     </div>
                                 </div>
                                 <div style={{
@@ -248,13 +239,8 @@ export default function FastFashionPage() {
                                         <Video style={{ width: '1.25rem', height: '1.25rem' }} />
                                     </div>
                                     <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.75rem' }}>To this AI video!</p>
-                                    <div style={{
-                                        height: '10rem', borderRadius: '1rem',
-                                        background: 'linear-gradient(135deg, rgba(14,76,73,0.08), rgba(244,120,77,0.12))',
-                                        border: '1px dashed var(--glass-border)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    }}>
-                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <div style={{ height: '10rem', borderRadius: '1rem', overflow: 'hidden', position: 'relative' }}>
+                                        <Image src="https://placehold.co/400x280/1a1a2e/4ecdc4?text=AI+Video" alt="AI video" fill style={{ objectFit: 'cover' }} unoptimized />
                                     </div>
                                 </div>
                             </div>
@@ -284,13 +270,8 @@ export default function FastFashionPage() {
                                         <Palette style={{ width: '1.25rem', height: '1.25rem' }} />
                                     </div>
                                     <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.75rem' }}>From this real dress</p>
-                                    <div style={{
-                                        height: '10rem', borderRadius: '1rem',
-                                        background: 'linear-gradient(135deg, rgba(14,76,73,0.12), rgba(244,120,77,0.08))',
-                                        border: '1px dashed var(--glass-border)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    }}>
-                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <div style={{ height: '10rem', borderRadius: '1rem', overflow: 'hidden', position: 'relative' }}>
+                                        <Image src="https://placehold.co/400x280/1a1a2e/e8a0bf?text=Real+Dress" alt="Real dress" fill style={{ objectFit: 'cover' }} unoptimized />
                                     </div>
                                 </div>
                                 <div style={{
@@ -309,13 +290,8 @@ export default function FastFashionPage() {
                                         <ImagePlus style={{ width: '1.25rem', height: '1.25rem' }} />
                                     </div>
                                     <p style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.75rem' }}>To this AI photoshoot</p>
-                                    <div style={{
-                                        height: '10rem', borderRadius: '1rem',
-                                        background: 'linear-gradient(135deg, rgba(244,120,77,0.08), rgba(14,76,73,0.12))',
-                                        border: '1px dashed var(--glass-border)',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    }}>
-                                        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <div style={{ height: '10rem', borderRadius: '1rem', overflow: 'hidden', position: 'relative' }}>
+                                        <Image src="https://placehold.co/400x280/1a1a2e/ff6b35?text=AI+Dress+Photoshoot" alt="AI dress photoshoot" fill style={{ objectFit: 'cover' }} unoptimized />
                                     </div>
                                 </div>
                             </div>

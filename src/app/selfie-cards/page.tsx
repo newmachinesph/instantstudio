@@ -2,13 +2,14 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Heart, Snowflake, PartyPopper, Sparkles } from 'lucide-react';
 
 const cardTypes = [
-    { title: 'V-Day Cards', icon: <Heart style={{ width: '1.25rem', height: '1.25rem' }} /> },
-    { title: 'Holiday Cards', icon: <Snowflake style={{ width: '1.25rem', height: '1.25rem' }} /> },
-    { title: 'New Year Selfies', icon: <PartyPopper style={{ width: '1.25rem', height: '1.25rem' }} /> },
-    { title: 'CNY Selfies', icon: <Sparkles style={{ width: '1.25rem', height: '1.25rem' }} /> },
+    { title: 'V-Day Cards', icon: <Heart style={{ width: '1.25rem', height: '1.25rem' }} />, image: 'https://placehold.co/400x280/1a1a2e/ff6b8a?text=V-Day+Cards' },
+    { title: 'Holiday Cards', icon: <Snowflake style={{ width: '1.25rem', height: '1.25rem' }} />, image: 'https://placehold.co/400x280/1a1a2e/87ceeb?text=Holiday+Cards' },
+    { title: 'New Year Selfies', icon: <PartyPopper style={{ width: '1.25rem', height: '1.25rem' }} />, image: 'https://placehold.co/400x280/1a1a2e/ffd700?text=New+Year+Selfies' },
+    { title: 'CNY Selfies', icon: <Sparkles style={{ width: '1.25rem', height: '1.25rem' }} />, image: 'https://placehold.co/400x280/1a1a2e/ff4444?text=CNY+Selfies' },
 ];
 
 export default function SelfieCardsPage() {
@@ -264,11 +265,9 @@ export default function SelfieCardsPage() {
                                 </h3>
                                 <div style={{
                                     width: '100%', height: '10rem', borderRadius: '1rem',
-                                    background: 'linear-gradient(135deg, rgba(14,76,73,0.12), rgba(244,120,77,0.08))',
-                                    border: '1px dashed var(--glass-border)',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    overflow: 'hidden', position: 'relative',
                                 }}>
-                                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <Image src={card.image} alt={card.title} fill style={{ objectFit: 'cover' }} unoptimized />
                                 </div>
                             </motion.div>
                         ))}

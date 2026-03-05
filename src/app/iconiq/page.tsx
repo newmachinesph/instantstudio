@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     ArrowRight, LayoutDashboard, Shield, CreditCard,
     Palette, Settings2, CheckCircle2, Sparkles,
@@ -242,11 +243,9 @@ export default function IconiqPage() {
                                 </p>
                                 <div style={{
                                     height: '12rem', borderRadius: '1rem',
-                                    background: 'linear-gradient(135deg, rgba(14,76,73,0.15), rgba(244,120,77,0.10))',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    border: '1px dashed var(--glass-border)',
+                                    overflow: 'hidden', position: 'relative',
                                 }}>
-                                    <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <Image src="https://placehold.co/500x300/1a1a2e/00d4aa?text=Original+%2B+ICONIQ+Model" alt="Original Product Photo + ICONIQ Model" fill style={{ objectFit: 'cover' }} unoptimized />
                                 </div>
                             </motion.div>
                             <motion.div
@@ -267,11 +266,9 @@ export default function IconiqPage() {
                                 </p>
                                 <div style={{
                                     height: '12rem', borderRadius: '1rem',
-                                    background: 'linear-gradient(135deg, rgba(244,120,77,0.10), rgba(14,76,73,0.15))',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    border: '1px dashed var(--glass-border)',
+                                    overflow: 'hidden', position: 'relative',
                                 }}>
-                                    <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>Image placeholder</span>
+                                    <Image src="https://placehold.co/500x300/1a1a2e/ff6b35?text=New+Product+Photo" alt="New Product Photo" fill style={{ objectFit: 'cover' }} unoptimized />
                                 </div>
                             </motion.div>
                         </div>
