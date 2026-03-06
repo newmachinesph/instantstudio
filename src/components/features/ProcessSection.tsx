@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const steps = [
@@ -44,6 +44,14 @@ const steps = [
 const ProcessSection = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 768);
+        check();
+        window.addEventListener('resize', check);
+        return () => window.removeEventListener('resize', check);
+    }, []);
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -51,13 +59,129 @@ const ProcessSection = () => {
     });
 
     const x = useTransform(scrollYProgress, (progress) => {
-        if (!scrollContainerRef.current) return 0;
+        if (isMobile || !scrollContainerRef.current) return 0;
         const totalWidth = scrollContainerRef.current.scrollWidth;
         const viewportWidth = window.innerWidth;
         const range = totalWidth - viewportWidth;
         return -range * progress;
     });
 
+    /* ── Mobile: simple vertical stack ── */
+    if (isMobile) {
+        return (
+            <section id="process" style={{ background: 'var(--bg-darker)', padding: '4rem 0' }}>
+                <div style={{ padding: '0 1.25rem', maxWidth: '40rem', marginLeft: 'auto', marginRight: 'auto' }}>
+                    {/* Intro */}
+                    <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                        <div style={{
+                            display: 'inline-block',
+                            padding: '0.375rem 1.25rem',
+                            borderRadius: '9999px',
+                            border: '1px solid var(--glass-border)',
+                            background: 'var(--glass-bg)',
+                            marginBottom: '1.5rem',
+                        }}>
+                            <span style={{
+                                fontSize: '0.875rem',
+                                fontWeight: 600,
+                                background: 'linear-gradient(to right, var(--primary-teal), var(--accent-orange))',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                letterSpacing: '0.05em',
+                            }}>
+                                HOW IT WORKS
+                            </span>
+                        </div>
+                        <h2 style={{
+                            fontSize: 'clamp(2rem, 6vw, 2.75rem)',
+                            fontWeight: 800,
+                            marginBottom: '1rem',
+                            letterSpacing: '-0.03em',
+                            lineHeight: 1.1,
+                        }}>
+                            How AI Solution Brings This to Life
+                        </h2>
+                        <p style={{
+                            fontSize: '1rem',
+                            color: 'var(--text-secondary)',
+                            fontWeight: 300,
+                            lineHeight: 1.6,
+                        }}>
+                            From celebrity collaboration to instant personalized output —
+                            five steps that powered the campaign.
+                        </p>
+                    </div>
+
+                    {/* Step Cards */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        {steps.map((step, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                viewport={{ once: true }}
+                                style={{
+                                    borderRadius: '1.25rem',
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid var(--glass-border)',
+                                    overflow: 'hidden',
+                                    position: 'relative',
+                                    minHeight: '280px',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'flex-end',
+                                }}
+                            >
+                                <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+                                    <img
+                                        src={step.image}
+                                        alt={step.title}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3 }}
+                                    />
+                                    <div style={{ position: 'absolute', inset: 0, backgroundColor: step.color, mixBlendMode: 'multiply', opacity: 0.6 }} />
+                                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg-card), transparent)' }} />
+                                </div>
+
+                                <div style={{ position: 'relative', zIndex: 10, padding: '1.5rem' }}>
+                                    <span style={{
+                                        fontSize: '3rem',
+                                        fontWeight: 900,
+                                        opacity: 0.8,
+                                        color: '#FFFFFF',
+                                        lineHeight: 1,
+                                        display: 'block',
+                                        marginBottom: '0.75rem',
+                                    }}>
+                                        {step.order}
+                                    </span>
+                                    <h3 style={{
+                                        fontSize: '1.375rem',
+                                        fontWeight: 700,
+                                        marginBottom: '0.5rem',
+                                        color: 'var(--text-primary)',
+                                        lineHeight: 1.2,
+                                    }}>
+                                        {step.title}
+                                    </h3>
+                                    <p style={{
+                                        fontSize: '0.9375rem',
+                                        color: 'var(--text-secondary)',
+                                        fontWeight: 300,
+                                        lineHeight: 1.6,
+                                    }}>
+                                        {step.description}
+                                    </p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    /* ── Desktop: horizontal scroll-jacking ── */
     return (
         <section
             ref={sectionRef}
@@ -262,12 +386,6 @@ const ProcessSection = () => {
                     .process-intro-card { padding: 3rem !important; }
                     .process-step-card { padding: 2rem !important; }
                     .process-scroll-container { gap: 1.5rem !important; padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
-                }
-                @media (max-width: 640px) {
-                    .process-card { width: 85vw !important; height: 70vh !important; }
-                    .process-intro-card { padding: 2rem !important; }
-                    .process-step-card { padding: 1.5rem !important; }
-                    .process-scroll-container { gap: 1rem !important; padding-left: 1rem !important; padding-right: 1rem !important; }
                 }
             `}</style>
         </section>
